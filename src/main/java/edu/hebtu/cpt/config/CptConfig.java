@@ -6,11 +6,13 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import edu.hebtu.cpt.controller.JobController;
-
+import edu.hebtu.cpt.controller.TypeController;
 import edu.hebtu.cpt.controller.UserController;
 import edu.hebtu.cpt.modle.Job;
-
+import edu.hebtu.cpt.modle.Type;
 import edu.hebtu.cpt.modle.User;
+import edu.hebtu.cpt.controller.TypeController;
+import edu.hebtu.cpt.modle.Type;
 
 
 /**
@@ -34,7 +36,7 @@ public class CptConfig extends JFinalConfig {
     public void configRoute(Routes me) {
         me.add("user", UserController.class);
         me.add("job", JobController.class);
-
+        me.add("type", TypeController.class);
     }
 
     public static C3p0Plugin createC3p0Plugin() {
@@ -55,7 +57,7 @@ public class CptConfig extends JFinalConfig {
         arp.setShowSql(true);
         arp.addMapping("user", "name", User.class);    // 映射
         arp.addMapping("job", Job.class);    // 映射
-
+        arp.addMapping("type", Type.class);
     }
 
     /**
